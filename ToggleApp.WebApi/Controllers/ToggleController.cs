@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ToggleApp.WebApi.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class ToggleController : Controller
     {
         // GET api/values
         [HttpGet]

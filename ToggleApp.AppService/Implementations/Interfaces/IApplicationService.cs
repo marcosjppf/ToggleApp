@@ -2,7 +2,7 @@
 using ToggleApp.AppService.Dto;
 using ToggleApp.Domain.Entities;
 
-namespace ToggleApp.AppService.Interfaces
+namespace ToggleApp.AppService.Implementations.Interfaces
 {
     public interface IApplicationService
     {

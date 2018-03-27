@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ToggleApp.Data.Context;
 using ToggleApp.Domain.Entities;
-using ToggleApp.Domain.Repositories;
+using ToggleApp.Domain.Repositories.Interfaces;
 
 namespace ToggleApp.Data.Repositories
 {

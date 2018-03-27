@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ToggleApp.Domain.Entities;
 
-namespace ToggleApp.Domain.Repositories
+namespace ToggleApp.Domain.Repositories.Interfaces
 {
     public interface IApplicationRepository
     {

@@ -2,7 +2,7 @@
 using ToggleApp.Domain.Entities;
 using System.Threading.Tasks;
 
-namespace ToggleApp.Domain.Repositories
+namespace ToggleApp.Domain.Repositories.Interfaces
 {
     public interface IToggleRepository
     {

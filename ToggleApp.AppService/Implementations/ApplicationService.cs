@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ToggleApp.AppService.Dto;
-using ToggleApp.AppService.Interfaces;
-using ToggleApp.Domain.Repositories;
+using ToggleApp.AppService.Implementations.Interfaces;
+using ToggleApp.Domain.Repositories.Interfaces;
 
 namespace ToggleApp.AppService.Implementations
 {

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ToggleApp.AppService.Interfaces;
+using ToggleApp.AppService.Implementations.Interfaces;
 using ToggleApp.Domain.Entities;
-using ToggleApp.Domain.Repositories;
+using ToggleApp.Domain.Repositories.Interfaces;
 
 namespace ToggleApp.AppService.Implementations
 {
