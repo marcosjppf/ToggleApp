@@ -4746,6 +4746,42 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
+      },
+      "ToggleApp.AppService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "ToggleApp.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ToggleApp.AppService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToggleApp.AppService.dll": {}
+        }
+      },
+      "ToggleApp.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "ToggleApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ToggleApp.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToggleApp.Data.dll": {}
+        }
+      },
+      "ToggleApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ToggleApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToggleApp.Domain.dll": {}
+        }
       }
     }
   },
@@ -12527,12 +12563,28 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "ToggleApp.AppService/1.0.0": {
+      "type": "project",
+      "path": "../ToggleApp.AppService/ToggleApp.AppService.csproj",
+      "msbuildProject": "../ToggleApp.AppService/ToggleApp.AppService.csproj"
+    },
+    "ToggleApp.Data/1.0.0": {
+      "type": "project",
+      "path": "../ToggleApp.Data/ToggleApp.Data.csproj",
+      "msbuildProject": "../ToggleApp.Data/ToggleApp.Data.csproj"
+    },
+    "ToggleApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ToggleApp.Domain/ToggleApp.Domain.csproj",
+      "msbuildProject": "../ToggleApp.Domain/ToggleApp.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.6",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "ToggleApp.AppService >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12564,7 +12616,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projetos\\Farfetch\\ToggleApp\\ToggleApp.AppService\\ToggleApp.AppService.csproj": {
+              "projectPath": "C:\\Projetos\\Farfetch\\ToggleApp\\ToggleApp.AppService\\ToggleApp.AppService.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ToggleApp.Data\\Repository"
+    "\\ToggleApp.AppService\\Implementations",
+    "\\ToggleApp.Data\\Configurations",
+    "\\ToggleApp.Data\\Context",
+    "\\ToggleApp.Data\\Repositories",
+    "\\ToggleApp.Domain",
+    "\\ToggleApp.Domain\\Entities",
+    "\\ToggleApp.Domain\\Repositories"
   ],
-  "SelectedNode": "\\ToggleApp.WebApi",
+  "SelectedNode": "\\ToggleApp.AppService",
   "PreviewInSolutionExplorer": false
 }

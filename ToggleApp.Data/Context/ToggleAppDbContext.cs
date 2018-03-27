@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ToggleApp.Domain.Entities;
-using ToggleApp.Data.Configurations;
 
 namespace ToggleApp.Data.Context
 {
@@ -16,7 +15,8 @@ namespace ToggleApp.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new ApplicationEntityConfiguration());
+            modelBuilder.Entity<Application>().Property(a => a.Name).IsRequired();
+            modelBuilder.Entity<Toggle>().Property(t => t.Name).IsRequired();
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -196,6 +196,29 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "ToggleApp.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "ToggleApp.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ToggleApp.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToggleApp.Data.dll": {}
+        }
+      },
+      "ToggleApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ToggleApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ToggleApp.Domain.dll": {}
+        }
       }
     }
   },
@@ -656,11 +679,22 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "ToggleApp.Data/1.0.0": {
+      "type": "project",
+      "path": "../ToggleApp.Data/ToggleApp.Data.csproj",
+      "msbuildProject": "../ToggleApp.Data/ToggleApp.Data.csproj"
+    },
+    "ToggleApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../ToggleApp.Domain/ToggleApp.Domain.csproj",
+      "msbuildProject": "../ToggleApp.Domain/ToggleApp.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "ToggleApp.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -692,7 +726,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projetos\\Farfetch\\ToggleApp\\ToggleApp.Data\\ToggleApp.Data.csproj": {
+              "projectPath": "C:\\Projetos\\Farfetch\\ToggleApp\\ToggleApp.Data\\ToggleApp.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

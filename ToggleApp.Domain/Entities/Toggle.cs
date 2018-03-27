@@ -8,10 +8,10 @@
         public int? ApplicationId;
         public bool Enable { get; set; }
         public virtual Application Application { get; set; }
-        public bool IsPublic =>
-            !ApplicationId.HasValue;
+        public bool IsPublic
+            => !ApplicationId.HasValue;
 
-        public bool AcessibleTo(int applicationId, string version) =>
-            ApplicationId == applicationId && Version == version;
+        public bool AcessibleTo(int applicationId, string version)
+            => ApplicationId == applicationId && Version == version;
     }
 }
