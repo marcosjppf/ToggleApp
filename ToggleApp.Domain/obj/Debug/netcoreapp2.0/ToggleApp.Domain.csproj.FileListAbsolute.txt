@@ -1,8 +1,0 @@
-C:\Projetos\Farfetch\ToggleApp\ToggleApp.Domain\bin\Debug\netcoreapp2.0\ToggleApp.Domain.deps.json
-C:\Projetos\Farfetch\ToggleApp\ToggleApp.Domain\bin\Debug\netcoreapp2.0\ToggleApp.Domain.dll
-C:\Projetos\Farfetch\ToggleApp\ToggleApp.Domain\bin\Debug\netcoreapp2.0\ToggleApp.Domain.pdb
-C:\Projetos\Farfetch\ToggleApp\ToggleApp.Domain\obj\Debug\netcoreapp2.0\ToggleApp.Domain.csproj.CoreCompileInputs.cache
-C:\Projetos\Farfetch\ToggleApp\ToggleApp.Domain\obj\Debug\netcoreapp2.0\ToggleApp.Domain.AssemblyInfoInputs.cache
-C:\Projetos\Farfetch\ToggleApp\ToggleApp.Domain\obj\Debug\netcoreapp2.0\ToggleApp.Domain.AssemblyInfo.cs
-C:\Projetos\Farfetch\ToggleApp\ToggleApp.Domain\obj\Debug\netcoreapp2.0\ToggleApp.Domain.dll
-C:\Projetos\Farfetch\ToggleApp\ToggleApp.Domain\obj\Debug\netcoreapp2.0\ToggleApp.Domain.pdb

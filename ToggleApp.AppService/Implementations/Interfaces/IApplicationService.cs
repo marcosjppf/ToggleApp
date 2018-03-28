@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Threading.Tasks;
 using ToggleApp.AppService.Dto;
-using ToggleApp.Domain.Entities;
 
-namespace ToggleApp.AppService.Implementations.Interfaces
+namespace ToggleApp.AppService.Implementations
 {
     public interface IApplicationService
     {
-        ApplicationDto GetApplicationById(int id);
+        Task<ApplicationDto> GetApplicationById(int id);
     }
 }

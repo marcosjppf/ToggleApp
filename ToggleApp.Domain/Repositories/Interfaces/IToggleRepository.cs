@@ -2,12 +2,12 @@
 using ToggleApp.Domain.Entities;
 using System.Threading.Tasks;
 
-namespace ToggleApp.Domain.Repositories.Interfaces
+namespace ToggleApp.Domain.Repositories
 {
     public interface IToggleRepository
     {
-        IEnumerable<Toggle> GetAll();
-        Toggle GetById(int id);
+        Task<IEnumerable<Toggle>> GetAll();
+        Task<Toggle> GetById(int id);
         IEnumerable<Toggle> GetFromApplication(int applicationId, string version);
         Task AddAsync(Toggle toggle);
         Task UpdateAsync(Toggle toggle);

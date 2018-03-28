@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ToggleApp.AppService\ToggleApp.AppService.csproj" />
+    <ProjectReference Include="..\ToggleApp.Data\ToggleApp.Data.csproj" />
+    <ProjectReference Include="..\ToggleApp.Domain\ToggleApp.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -12,9 +12,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToggleApp.Data", "ToggleApp
 		{3D96BC4A-4C0E-4D92-B734-6A8B705C018B} = {3D96BC4A-4C0E-4D92-B734-6A8B705C018B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToggleApp.Domain", "ToggleApp.Domain\ToggleApp.Domain.csproj", "{3D96BC4A-4C0E-4D92-B734-6A8B705C018B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToggleApp.Domain", "ToggleApp.Domain\ToggleApp.Domain.csproj", "{3D96BC4A-4C0E-4D92-B734-6A8B705C018B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E86CAF1C-8A12-49D5-A957-CC50226CC36F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B3379005-8843-4149-8014-EA6D5AF7F888}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToggleApp.Domain.Test", "ToggleApp.Domain.Test\ToggleApp.Domain.Test.csproj", "{D916AA10-DF31-4463-A4BF-08DD814DECAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,9 +40,16 @@ Global
 		{3D96BC4A-4C0E-4D92-B734-6A8B705C018B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D96BC4A-4C0E-4D92-B734-6A8B705C018B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D96BC4A-4C0E-4D92-B734-6A8B705C018B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D916AA10-DF31-4463-A4BF-08DD814DECAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D916AA10-DF31-4463-A4BF-08DD814DECAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D916AA10-DF31-4463-A4BF-08DD814DECAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D916AA10-DF31-4463-A4BF-08DD814DECAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D916AA10-DF31-4463-A4BF-08DD814DECAD} = {B3379005-8843-4149-8014-EA6D5AF7F888}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F1E3F42E-1F08-4059-9258-77C9CF5346C2}

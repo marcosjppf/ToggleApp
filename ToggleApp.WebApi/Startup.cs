@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using ToggleApp.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using ToggleApp.Domain.Repositories;
+using ToggleApp.Data.Repositories;
 
 namespace ToggleApp.WebApi
 {
@@ -27,8 +23,11 @@ namespace ToggleApp.WebApi
         {
             services.AddDbContext<ToggleAppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddTransient<IToggleRepository, ToggleRepository>();
             services.AddMvc();
+
+            //Transient - Serviço
+            //Singleton - Repository
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

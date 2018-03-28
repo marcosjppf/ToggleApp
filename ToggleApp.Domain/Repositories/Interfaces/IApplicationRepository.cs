@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using ToggleApp.Domain.Entities;
 
-namespace ToggleApp.Domain.Repositories.Interfaces
+namespace ToggleApp.Domain.Repositories
 {
     public interface IApplicationRepository
     {
-        IEnumerable<Application> GetAll();
-        Application GetById(int id);
+        Task<IEnumerable<Application>> GetAll();
+        Task<Application> GetById(int id);
     }
 }

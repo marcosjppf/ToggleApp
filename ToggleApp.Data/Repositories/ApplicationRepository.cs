@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using ToggleApp.Data.Context;
 using ToggleApp.Domain.Entities;
-using ToggleApp.Domain.Repositories.Interfaces;
+using ToggleApp.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace ToggleApp.Data.Repositories
 {
@@ -15,14 +17,14 @@ namespace ToggleApp.Data.Repositories
             _toggleAppDbContext = toggleAppDbContext;
         }
 
-        public IEnumerable<Application> GetAll()
+        public async Task<IEnumerable<Application>> GetAll()
         {
-            return _toggleAppDbContext.Applications.ToList();
+            return await _toggleAppDbContext.Applications.ToListAsync();
         }
 
-        public Application GetById(int id)
+        public async Task<Application> GetById(int id)
         {
-            return _toggleAppDbContext.Applications.Find(id);
+            return await _toggleAppDbContext.Applications.FindAsync(id);
         }
     }
 }

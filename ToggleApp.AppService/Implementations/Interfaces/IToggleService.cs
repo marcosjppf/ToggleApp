@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ToggleApp.Domain.Entities;
+using ToggleApp.AppService.Dto;
 
-namespace ToggleApp.AppService.Implementations.Interfaces
+namespace ToggleApp.AppService.Implementations
 {
     public interface IToggleService
     {
-        Toggle GetToggleById(int id);
-        IEnumerable<Toggle> GetAllToggles();
-        Task AddToggleAsync(Toggle toggle);
-        Task UpdateToggleAsync(Toggle toggle);
+        Task<ToggleDto> GetToggleById(int id);
+        Task<IEnumerable<ToggleDto>> GetAllToggles();
+        Task AddToggleAsync(ToggleDto toggle);
+        Task UpdateToggleAsync(ToggleDto toggle);
         Task DeleteToggleAsync(int id);
     }
 }

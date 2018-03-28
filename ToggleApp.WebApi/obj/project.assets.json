@@ -12584,7 +12584,9 @@
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.6",
       "Microsoft.NETCore.App >= 2.0.0",
-      "ToggleApp.AppService >= 1.0.0"
+      "ToggleApp.AppService >= 1.0.0",
+      "ToggleApp.Data >= 1.0.0",
+      "ToggleApp.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12619,6 +12621,12 @@
           "projectReferences": {
             "C:\\Projetos\\Farfetch\\ToggleApp\\ToggleApp.AppService\\ToggleApp.AppService.csproj": {
               "projectPath": "C:\\Projetos\\Farfetch\\ToggleApp\\ToggleApp.AppService\\ToggleApp.AppService.csproj"
+            },
+            "C:\\Projetos\\Farfetch\\ToggleApp\\ToggleApp.Data\\ToggleApp.Data.csproj": {
+              "projectPath": "C:\\Projetos\\Farfetch\\ToggleApp\\ToggleApp.Data\\ToggleApp.Data.csproj"
+            },
+            "C:\\Projetos\\Farfetch\\ToggleApp\\ToggleApp.Domain\\ToggleApp.Domain.csproj": {
+              "projectPath": "C:\\Projetos\\Farfetch\\ToggleApp\\ToggleApp.Domain\\ToggleApp.Domain.csproj"
             }
           }
         }

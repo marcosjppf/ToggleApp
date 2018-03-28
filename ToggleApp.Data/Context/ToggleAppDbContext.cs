@@ -17,6 +17,7 @@ namespace ToggleApp.Data.Context
         {
             modelBuilder.Entity<Application>().Property(a => a.Name).IsRequired();
             modelBuilder.Entity<Toggle>().Property(t => t.Name).IsRequired();
+            modelBuilder.Entity<Toggle>().Property(t => t.Enable).IsRequired();
             base.OnModelCreating(modelBuilder);
         }
     }

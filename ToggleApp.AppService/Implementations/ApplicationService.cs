@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using ToggleApp.AppService.Dto;
-using ToggleApp.AppService.Implementations.Interfaces;
-using ToggleApp.Domain.Repositories.Interfaces;
+using ToggleApp.AppService.Tools;
+using ToggleApp.Domain.Repositories;
 
 namespace ToggleApp.AppService.Implementations
 {
@@ -14,14 +15,14 @@ namespace ToggleApp.AppService.Implementations
             _applicationRepository = applicationRepository;
         }
 
-        public ApplicationDto GetApplicationById(int id)
+        public async Task<ApplicationDto> GetApplicationById(int id)
         {
-            var application = _applicationRepository.GetById(id);
+            var application = await _applicationRepository.GetById(id);
 
             if (application == null)
                 throw new KeyNotFoundException();
 
-            return new ApplicationDto { Name = application.Name };
+            return ApplicationMapper.ToApplicationDto(application);
         }
     }
 }
