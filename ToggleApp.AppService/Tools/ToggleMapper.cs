@@ -11,9 +11,11 @@ namespace ToggleApp.AppService.Tools
             return (toggle == null) ? null :
                 new ToggleDto
                 {
+                    Id = toggle.Id,
                     Name = toggle.Name,
                     Activated = toggle.Enable,
-                    Version = toggle.Version
+                    Version = toggle.Version,
+                    ApplicationId = toggle.ApplicationId.HasValue ? toggle.ApplicationId.Value : (int?)null
                 };
         }
 
@@ -22,9 +24,11 @@ namespace ToggleApp.AppService.Tools
             return (toggleDto == null) ? null :
                 new Toggle
                 {
+                    Id = toggleDto.Id,
                     Name = toggleDto.Name,
                     Enable = toggleDto.Activated,
-                    Version = toggleDto.Version
+                    Version = toggleDto.Version,
+                    ApplicationId = toggleDto.ApplicationId > 0 ? toggleDto.ApplicationId : (int?)null
                 };
         }
 

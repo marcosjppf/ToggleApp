@@ -6,8 +6,8 @@ namespace ToggleApp.Domain.Repositories
 {
     public interface IToggleRepository
     {
-        Task<IEnumerable<Toggle>> GetAll();
-        Task<Toggle> GetById(int id);
+        Task<IEnumerable<Toggle>> GetAllAsync();
+        Task<Toggle> GetByIdAsync(int id);
         IEnumerable<Toggle> GetFromApplication(int applicationId, string version);
         Task AddAsync(Toggle toggle);
         Task UpdateAsync(Toggle toggle);

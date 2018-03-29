@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ToggleApp.AppService.Dto;
 using ToggleApp.AppService.Tools;
@@ -15,28 +16,27 @@ namespace ToggleApp.AppService.Implementations
             _toggleRepository = toggleRepository;
         }
 
-        public async Task<ToggleDto> GetToggleById(int id)
+        public async Task<ToggleDto> GetToggleByIdAsync(int id)
         {
-            var toggle = await _toggleRepository.GetById(id);
-            if (toggle == null)
-                throw new KeyNotFoundException();
-
+            var toggle = await _toggleRepository.GetByIdAsync(id);
             return ToggleMapper.ToToggleDto(toggle);
         }
 
-        public async Task<IEnumerable<ToggleDto>> GetAllToggles()
+        public IEnumerable<ToggleDto> GetAllTogglesFromApplicationAsync(int applicationId, string version)
         {
-            var toggles = await _toggleRepository.GetAll();
-            if (toggles == null)
-                throw new KeyNotFoundException();
+            return ToggleMapper.ToToggleDtoList(_toggleRepository.GetFromApplication(applicationId, version));
+        }
 
+        public async Task<IEnumerable<ToggleDto>> GetAllTogglesAsync()
+        {
+            var toggles = await _toggleRepository.GetAllAsync();
             return ToggleMapper.ToToggleDtoList(toggles);
         }
 
         public async Task AddToggleAsync(ToggleDto toggleDto)
         {
             if (toggleDto == null)
-                throw new TaskCanceledException();
+                throw new NullReferenceException();
 
             await _toggleRepository.AddAsync(ToggleMapper.ToToggle(toggleDto));
         }
@@ -44,20 +44,21 @@ namespace ToggleApp.AppService.Implementations
         public async Task UpdateToggleAsync(ToggleDto toggleDto)
         {
             if (toggleDto == null)
-                throw new TaskCanceledException();
+                throw new NullReferenceException();
+
+            if (await _toggleRepository.GetByIdAsync(toggleDto.Id) == null)
+                throw new KeyNotFoundException();
 
             await _toggleRepository.UpdateAsync(ToggleMapper.ToToggle(toggleDto));
         }
 
         public async Task DeleteToggleAsync(int id)
         {
-            var toggle = await _toggleRepository.GetById(id);
+            var toggle = await _toggleRepository.GetByIdAsync(id);
             if (toggle == null)
                 throw new KeyNotFoundException();
 
             await _toggleRepository.DeleteAsync(toggle);
         }
-
-        // Trazer todas as Toggles de uma determinada aplicação
     }
 }

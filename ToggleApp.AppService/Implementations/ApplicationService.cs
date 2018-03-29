@@ -15,12 +15,12 @@ namespace ToggleApp.AppService.Implementations
             _applicationRepository = applicationRepository;
         }
 
-        public async Task<ApplicationDto> GetApplicationById(int id)
+        public async Task<ApplicationDto> GetApplicationByIdAsync(int id)
         {
-            var application = await _applicationRepository.GetById(id);
+            var application = await _applicationRepository.GetByIdAsync(id);
 
             if (application == null)
-                throw new KeyNotFoundException();
+                return null;
 
             return ApplicationMapper.ToApplicationDto(application);
         }

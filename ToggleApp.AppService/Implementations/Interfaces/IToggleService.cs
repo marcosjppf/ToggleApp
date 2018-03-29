@@ -6,8 +6,9 @@ namespace ToggleApp.AppService.Implementations
 {
     public interface IToggleService
     {
-        Task<ToggleDto> GetToggleById(int id);
-        Task<IEnumerable<ToggleDto>> GetAllToggles();
+        Task<ToggleDto> GetToggleByIdAsync(int id);
+        Task<IEnumerable<ToggleDto>> GetAllTogglesAsync();
+        IEnumerable<ToggleDto> GetAllTogglesFromApplicationAsync(int applicationId, string version);
         Task AddToggleAsync(ToggleDto toggle);
         Task UpdateToggleAsync(ToggleDto toggle);
         Task DeleteToggleAsync(int id);

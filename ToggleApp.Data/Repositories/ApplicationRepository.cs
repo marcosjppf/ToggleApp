@@ -17,12 +17,12 @@ namespace ToggleApp.Data.Repositories
             _toggleAppDbContext = toggleAppDbContext;
         }
 
-        public async Task<IEnumerable<Application>> GetAll()
+        public async Task<IEnumerable<Application>> GetAllAsync()
         {
             return await _toggleAppDbContext.Applications.ToListAsync();
         }
 
-        public async Task<Application> GetById(int id)
+        public async Task<Application> GetByIdAsync(int id)
         {
             return await _toggleAppDbContext.Applications.FindAsync(id);
         }

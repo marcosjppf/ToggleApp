@@ -6,7 +6,7 @@ namespace ToggleApp.Domain.Repositories
 {
     public interface IApplicationRepository
     {
-        Task<IEnumerable<Application>> GetAll();
-        Task<Application> GetById(int id);
+        Task<IEnumerable<Application>> GetAllAsync();
+        Task<Application> GetByIdAsync(int id);
     }
 }

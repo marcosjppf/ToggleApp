@@ -6,6 +6,7 @@ using ToggleApp.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using ToggleApp.Domain.Repositories;
 using ToggleApp.Data.Repositories;
+using ToggleApp.AppService.Implementations;
 
 namespace ToggleApp.WebApi
 {
@@ -18,24 +19,26 @@ namespace ToggleApp.WebApi
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ToggleAppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IToggleRepository, ToggleRepository>();
-            services.AddMvc();
+            
+            services.AddScoped<IApplicationRepository, ApplicationRepository>();            
+            services.AddScoped<IApplicationService, ApplicationService>();
+            services.AddScoped<IToggleRepository, ToggleRepository>();
+            services.AddScoped<IToggleService, ToggleService>();
 
-            //Transient - Serviço
-            //Singleton - Repository
+            services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
+                app.UseDatabaseErrorPage();
             }
 
             app.UseMvc();

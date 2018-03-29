@@ -87,11 +87,11 @@
           "lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll": {}
         }
       },
-      "Microsoft.NET.Test.Sdk/15.6.1": {
+      "Microsoft.NET.Test.Sdk/15.6.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeCoverage": "1.0.3",
-          "Microsoft.TestPlatform.TestHost": "15.6.1"
+          "Microsoft.TestPlatform.TestHost": "15.6.2"
         },
         "build": {
           "build/netcoreapp1.0/Microsoft.Net.Test.Sdk.props": {},
@@ -290,7 +290,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.TestPlatform.ObjectModel/15.6.1": {
+      "Microsoft.TestPlatform.ObjectModel/15.6.2": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.0",
@@ -399,11 +399,11 @@
           }
         }
       },
-      "Microsoft.TestPlatform.TestHost/15.6.1": {
+      "Microsoft.TestPlatform.TestHost/15.6.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyModel": "1.0.3",
-          "Microsoft.TestPlatform.ObjectModel": "15.6.1",
+          "Microsoft.TestPlatform.ObjectModel": "15.6.2",
           "Newtonsoft.Json": "9.0.1"
         },
         "compile": {
@@ -1846,10 +1846,10 @@
         "microsoft.extensions.dependencymodel.nuspec"
       ]
     },
-    "Microsoft.NET.Test.Sdk/15.6.1": {
-      "sha512": "K2AZ+uRGm8ttYzWm+fdA/jIiLp8bh/63D/KcDNdJ0MbKDmu0FUoit8OLTOmtoJRUMzP/+kRFwGg0qxqI/p8ugQ==",
+    "Microsoft.NET.Test.Sdk/15.6.2": {
+      "sha512": "Rl7hcXVGXraZtNRbVh/sgFlgvCDv+MukhY9s/qChk4fvtjtyfMBPMMIbtdZN/9UhYBg8JEGwnhPLXsH2zSDZYw==",
       "type": "package",
-      "path": "microsoft.net.test.sdk/15.6.1",
+      "path": "microsoft.net.test.sdk/15.6.2",
       "files": [
         "build/net45/Microsoft.Net.Test.Sdk.props",
         "build/net45/Microsoft.Net.Test.Sdk.targets",
@@ -1857,7 +1857,7 @@
         "build/netcoreapp1.0/Microsoft.Net.Test.Sdk.targets",
         "build/uap10.0/Microsoft.Net.Test.Sdk.props",
         "buildMultiTargeting/Microsoft.Net.Test.Sdk.props",
-        "microsoft.net.test.sdk.15.6.1.nupkg.sha512",
+        "microsoft.net.test.sdk.15.6.2.nupkg.sha512",
         "microsoft.net.test.sdk.nuspec"
       ]
     },
@@ -2203,10 +2203,10 @@
         "runtime.json"
       ]
     },
-    "Microsoft.TestPlatform.ObjectModel/15.6.1": {
-      "sha512": "HJj5ZxGrr5o6f7fQQZNxqz1JH116W1TZTrzAEOSN5WWmu0gdBIhFC8RL4lw+R7FY9N6tUOf5KDlH7+bZtHwD/A==",
+    "Microsoft.TestPlatform.ObjectModel/15.6.2": {
+      "sha512": "P+P8SRTE4OZvxHF3kA3pqHsK/zuCZC3HwMSHrF+THHkUsruVB11xtvvMw6WcSiHmaApxDBILgXjNL6vgHCX34g==",
       "type": "package",
-      "path": "microsoft.testplatform.objectmodel/15.6.1",
+      "path": "microsoft.testplatform.objectmodel/15.6.2",
       "files": [
         "lib/net451/Microsoft.TestPlatform.CoreUtilities.dll",
         "lib/net451/Microsoft.TestPlatform.PlatformAbstractions.dll",
@@ -2269,14 +2269,14 @@
         "lib/netstandard1.5/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
         "lib/netstandard1.5/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll",
         "lib/netstandard1.5/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-        "microsoft.testplatform.objectmodel.15.6.1.nupkg.sha512",
+        "microsoft.testplatform.objectmodel.15.6.2.nupkg.sha512",
         "microsoft.testplatform.objectmodel.nuspec"
       ]
     },
-    "Microsoft.TestPlatform.TestHost/15.6.1": {
-      "sha512": "DK3JygY+7uYKK0fPS4EPauC9v3Lvp9NvoYPIgG6qIrs1FfPHrnUM8WfKJw7BVnI86GHjCt7kOxcoauGTTQaM8g==",
+    "Microsoft.TestPlatform.TestHost/15.6.2": {
+      "sha512": "O7Ro/wQDzfH6gcdkMsrJ63DtidLu4yN403Ti9r9tczJqxlWDcmpkQJbYF+uWJLB0nLzbvcTKQgSHB1ZNX30iZA==",
       "type": "package",
-      "path": "microsoft.testplatform.testhost/15.6.1",
+      "path": "microsoft.testplatform.testhost/15.6.2",
       "files": [
         "ThirdPartyNotices.txt",
         "build/uap10.0/Microsoft.TestPlatform.TestHost.props",
@@ -2413,7 +2413,7 @@
         "lib/uap10.0/Microsoft.TestPlatform.Utilities.dll",
         "lib/uap10.0/Microsoft.VisualStudio.TestPlatform.Common.dll",
         "lib/uap10.0/testhost.dll",
-        "microsoft.testplatform.testhost.15.6.1.nupkg.sha512",
+        "microsoft.testplatform.testhost.15.6.2.nupkg.sha512",
         "microsoft.testplatform.testhost.nuspec"
       ]
     },
@@ -5873,7 +5873,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "FluentAssertions >= 5.2.0",
-      "Microsoft.NET.Test.Sdk >= 15.6.1",
+      "Microsoft.NET.Test.Sdk >= 15.6.2",
       "Microsoft.NETCore.App >= 2.0.0",
       "ToggleApp.Domain >= 1.0.0",
       "xunit >= 2.3.1",
@@ -5931,7 +5931,7 @@
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
-            "version": "[15.6.1, )"
+            "version": "[15.6.2, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",

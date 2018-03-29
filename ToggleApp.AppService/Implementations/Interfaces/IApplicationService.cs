@@ -5,6 +5,6 @@ namespace ToggleApp.AppService.Implementations
 {
     public interface IApplicationService
     {
-        Task<ApplicationDto> GetApplicationById(int id);
+        Task<ApplicationDto> GetApplicationByIdAsync(int id);
     }
 }
