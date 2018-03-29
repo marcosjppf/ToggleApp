@@ -28,7 +28,7 @@ namespace ToggleApp.WebApi.Controllers
 
             if (toggles == null)
                 return toggleModelList;
-            
+
             foreach (var toggle in toggles)
                 toggleModelList.Add(new ToggleModel(toggle.Name, toggle.Activated));
 
@@ -38,6 +38,9 @@ namespace ToggleApp.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
+            if (id <= 0)
+                return BadRequest($"Invalid parameters");
+
             var toggle = await _toggleServices.GetToggleByIdAsync(id);
 
             if (toggle == null)
@@ -49,6 +52,9 @@ namespace ToggleApp.WebApi.Controllers
         [HttpGet("{applicationId}/{version}")]
         public async Task<IActionResult> Get(int applicationId, string version)
         {
+            if (applicationId <= 0 || string.IsNullOrWhiteSpace(version))
+                return BadRequest($"Invalid parameters");
+
             if (await _applicationServices.GetApplicationByIdAsync(applicationId) == null)
                 return NotFound($"ApplicationId {applicationId} does not exists.");
 
@@ -69,11 +75,22 @@ namespace ToggleApp.WebApi.Controllers
         {
             try
             {
+                if (applicationId <= 0 || string.IsNullOrWhiteSpace(version) || model == null)
+                    return BadRequest($"Invalid parameters");
+
                 if (await _applicationServices.GetApplicationByIdAsync(applicationId) == null)
                     return NotFound($"ApplicationId {applicationId} does not exists.");
 
-                await _toggleServices.AddToggleAsync(new ToggleDto { ApplicationId = applicationId, Version = version, Name = model.Name, Activated = model.Value });
-                return Ok($"New Toggle with {model.Name} registered");
+                var toggleSaved = await _toggleServices
+                    .AddToggleAsync(new ToggleDto
+                    {
+                        ApplicationId = applicationId,
+                        Version = version,
+                        Name = model.Name,
+                        Activated = model.Value
+                    });
+
+                return Ok($"New Toggle registered. id = { toggleSaved.Id }");
             }
             catch (Exception)
             {
@@ -86,15 +103,25 @@ namespace ToggleApp.WebApi.Controllers
         {
             try
             {
-                await _toggleServices.UpdateToggleAsync(new ToggleDto
-                {
-                    Id = id,
-                    Name = model.Name,
-                    Activated = model.Value
-                });
-                return new NoContentResult();
+                if (id <= 0 || model == null)
+                    return BadRequest();
+
+                var toggleDto = await _toggleServices.GetToggleByIdAsync(id);
+
+                if (toggleDto == null)
+                    return NotFound($"Toggle Id {id} does not exists.");
+
+                var toggleSaved = await _toggleServices
+                    .UpdateToggleAsync(new ToggleDto
+                    {
+                        Id = id,
+                        Name = model.Name,
+                        Activated = model.Value
+                    });
+
+                return Ok($"Toggle Updated. id = { toggleSaved.Id }");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return NotFound($"Toggle {id} does not exist");
             }
@@ -105,6 +132,12 @@ namespace ToggleApp.WebApi.Controllers
         {
             try
             {
+                if (id <= 0)
+                    return BadRequest();
+
+                if (await _toggleServices.GetToggleByIdAsync(id) == null)
+                    return NotFound($"Toggle Id {id} does not exists.");
+
                 await _toggleServices.DeleteToggleAsync(id);
                 return new NoContentResult();
             }

@@ -10,7 +10,18 @@ namespace ToggleApp.AppService.Tools
             return application == null ? null :
                 new ApplicationDto
                 {
+                    Id = application.Id,
                     Name = application.Name
+                };
+        }
+
+        public static Application ToApplication(ApplicationDto applicationDto)
+        {
+            return applicationDto == null ? null :
+                new Application
+                {
+                    Id = applicationDto.Id,
+                    Name = applicationDto.Name
                 };
         }
     }

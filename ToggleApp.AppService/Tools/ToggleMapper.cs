@@ -28,7 +28,7 @@ namespace ToggleApp.AppService.Tools
                     Name = toggleDto.Name,
                     Enable = toggleDto.Activated,
                     Version = toggleDto.Version,
-                    ApplicationId = toggleDto.ApplicationId > 0 ? toggleDto.ApplicationId : (int?)null
+                    ApplicationId = toggleDto.ApplicationId.HasValue ? toggleDto.ApplicationId.Value : (int?)null
                 };
         }
 

@@ -9,8 +9,8 @@ namespace ToggleApp.Domain.Repositories
         Task<IEnumerable<Toggle>> GetAllAsync();
         Task<Toggle> GetByIdAsync(int id);
         IEnumerable<Toggle> GetFromApplication(int applicationId, string version);
-        Task AddAsync(Toggle toggle);
-        Task UpdateAsync(Toggle toggle);
+        Task<Toggle> AddAsync(Toggle toggle);
+        Task<Toggle> UpdateAsync(Toggle toggle);
         Task DeleteAsync(Toggle toggle);
     }
 }

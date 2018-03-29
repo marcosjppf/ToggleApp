@@ -33,23 +33,25 @@ namespace ToggleApp.AppService.Implementations
             return ToggleMapper.ToToggleDtoList(toggles);
         }
 
-        public async Task AddToggleAsync(ToggleDto toggleDto)
+        public async Task<ToggleDto> AddToggleAsync(ToggleDto toggleDto)
         {
             if (toggleDto == null)
                 throw new NullReferenceException();
 
-            await _toggleRepository.AddAsync(ToggleMapper.ToToggle(toggleDto));
+            return ToggleMapper.ToToggleDto(await _toggleRepository.AddAsync(ToggleMapper.ToToggle(toggleDto)));
         }
 
-        public async Task UpdateToggleAsync(ToggleDto toggleDto)
+        public async Task<ToggleDto> UpdateToggleAsync(ToggleDto toggleDto)
         {
             if (toggleDto == null)
                 throw new NullReferenceException();
 
-            if (await _toggleRepository.GetByIdAsync(toggleDto.Id) == null)
+            var toggle = await _toggleRepository.GetByIdAsync(toggleDto.Id);
+
+            if (toggle == null)
                 throw new KeyNotFoundException();
 
-            await _toggleRepository.UpdateAsync(ToggleMapper.ToToggle(toggleDto));
+            return ToggleMapper.ToToggleDto(await _toggleRepository.UpdateAsync(ToggleMapper.ToToggle(toggleDto)));
         }
 
         public async Task DeleteToggleAsync(int id)
