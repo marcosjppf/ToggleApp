@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ToggleApp.AppService.Test"
+    "\\ToggleApp.AppService.Test",
+    "\\ToggleApp.AppService.Test\\Helpers",
+    "\\ToggleApp.WebApi",
+    "\\ToggleApp.WebApi\\Model"
   ],
+  "SelectedNode": "\\ToggleApp.WebApi\\Model\\ToggleViewModel.cs",
   "PreviewInSolutionExplorer": false
 }
