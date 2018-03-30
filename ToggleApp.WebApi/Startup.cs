@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using ToggleApp.Domain.Repositories;
 using ToggleApp.Data.Repositories;
 using ToggleApp.AppService.Implementations;
+using ToggleApp.AppService.Interfaces;
 
 namespace ToggleApp.WebApi
 {

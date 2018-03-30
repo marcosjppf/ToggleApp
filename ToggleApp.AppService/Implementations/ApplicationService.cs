@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using ToggleApp.AppService.Dto;
-using ToggleApp.AppService.Tools;
+﻿using System.Threading.Tasks;
+using ToggleApp.AppService.Interfaces;
+using ToggleApp.Domain.Entities;
 using ToggleApp.Domain.Repositories;
 
 namespace ToggleApp.AppService.Implementations
@@ -15,14 +14,9 @@ namespace ToggleApp.AppService.Implementations
             _applicationRepository = applicationRepository;
         }
 
-        public async Task<ApplicationDto> GetApplicationByIdAsync(int id)
+        public async Task<Application> GetApplicationByIdAsync(int id)
         {
-            var application = await _applicationRepository.GetByIdAsync(id);
-
-            if (application == null)
-                return null;
-
-            return ApplicationMapper.ToApplicationDto(application);
+            return await _applicationRepository.GetByIdAsync(id);
         }
     }
 }

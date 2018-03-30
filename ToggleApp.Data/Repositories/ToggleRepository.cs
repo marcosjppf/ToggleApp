@@ -41,13 +41,9 @@ namespace ToggleApp.Data.Repositories
 
         public async Task<Toggle> UpdateAsync(Toggle toggle)
         {
-            var toggleDb = await _toggleAppDbContext.Toggles.FindAsync(toggle.Id);
-            toggleDb.Name = toggle.Name;
-            toggleDb.Enable = toggle.Enable;
-
-            _toggleAppDbContext.Update(toggleDb);
+            _toggleAppDbContext.Update(toggle);
             await _toggleAppDbContext.SaveChangesAsync();
-            return toggleDb;
+            return toggle;
         }
 
         public async Task DeleteAsync(Toggle toggle)
