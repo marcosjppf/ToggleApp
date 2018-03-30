@@ -1,4 +1,6 @@
-﻿namespace ToggleApp.WebApi.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ToggleApp.WebApi.Model
 {
     public class ToggleViewModel
     {
@@ -8,7 +10,9 @@
             Value = value;
         }
 
+        [Required]
         public string Name { get; set; }
+        [Required]
         public bool Value { get; set; }
     }
 }

@@ -20,6 +20,18 @@ namespace ToggleApp.WebApi.Controllers
             _applicationServices = applicationServices;
         }
 
+        /// <summary>
+        /// Get All Toggles.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /Toggles
+        ///
+        /// </remarks>
+        /// <returns>All existing Toggles</returns>
+        /// <response code="200">Success Message</response>
+        /// <response code="400">If the list of Toggles is null</response>      
         [HttpGet]
         public async Task<IEnumerable<ToggleViewModel>> Get()
         {
@@ -35,6 +47,18 @@ namespace ToggleApp.WebApi.Controllers
             return toggleModelList;
         }
 
+        /// <summary>
+        /// Get All Toggles.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /Toggles/{id}
+        ///
+        /// </remarks>
+        /// <returns>All existing Toggles</returns>
+        /// <response code="200">Success Message</response>
+        /// <response code="400">If the list of Toggles is null</response>
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -49,6 +73,21 @@ namespace ToggleApp.WebApi.Controllers
             return new ObjectResult(new ToggleViewModel(toggle.Name, toggle.Enable));
         }
 
+        /// <summary>
+        /// Get All Toggles.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /Toggles/{applicationId}/{version}
+        ///
+        /// </remarks>
+        /// <param name="applicationId">Application/Service Id</param>
+        /// <param name="version">Toggle version</param>
+        /// <returns>A list of Toggle from Application/Service</returns>
+        /// <response code="200">Success Message</response>
+        /// <response code="400">Bad Request</response>      
+        /// <response code="404">Not Found the Toggle</response> 
         [HttpGet("{applicationId}/{version}")]
         public async Task<IActionResult> Get(int applicationId, string version)
         {
@@ -72,6 +111,26 @@ namespace ToggleApp.WebApi.Controllers
             return new ObjectResult(toggleModelList);
         }
 
+        /// <summary>
+        /// Creates a Toggle.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Toggle/{applicationId}/{version}
+        ///     {
+        ///        "name": "isButtonNew",
+        ///        "value": true
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="applicationId">Application/Service Id</param>
+        /// <param name="version">Toggle version</param>
+        /// <param name="item"></param>
+        /// <returns>Success Message</returns>
+        /// <response code="201">Created Message</response>
+        /// <response code="400">Bad Request</response>      
+        /// <response code="404">Not Found the Toggle</response> 
         [HttpPost("{applicationId}/{version}")]
         public async Task<IActionResult> Post(int applicationId, string version, [FromBody]ToggleViewModel toggleViewModel)
         {
@@ -100,6 +159,25 @@ namespace ToggleApp.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates a Toggle.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     PUT /Toggle/{id}
+        ///     {
+        ///        "name": "isButtonNew",
+        ///        "value": true
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="id">Toggle Id</param>
+        /// <param name="item"></param>
+        /// <returns>Success Message</returns>
+        /// <response code="200">Success</response>
+        /// <response code="400">Bad Request</response>      
+        /// <response code="404">Not Found the Toggle</response>
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody]ToggleViewModel model)
         {
@@ -126,6 +204,21 @@ namespace ToggleApp.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a Toggle.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     DELETE /Toggle/{id}
+        ///
+        /// </remarks>
+        /// <param name="id">Toggle Id</param>
+        /// <param name="item"></param>
+        /// <returns>Success Message</returns>
+        /// <response code="200">Success</response>
+        /// <response code="400">Bad Request</response>      
+        /// <response code="404">Not Found the Toggle</response>
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

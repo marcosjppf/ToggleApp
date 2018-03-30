@@ -5,7 +5,6 @@ using ToggleApp.AppService.Interfaces;
 using FluentAssertions;
 using ToggleApp.Domain.Repositories;
 using Xunit;
-using System.Linq;
 
 namespace ToggleApp.AppService.Test
 {

@@ -8,6 +8,7 @@ using ToggleApp.Domain.Repositories;
 using ToggleApp.Data.Repositories;
 using ToggleApp.AppService.Implementations;
 using ToggleApp.AppService.Interfaces;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace ToggleApp.WebApi
 {
@@ -31,6 +32,11 @@ namespace ToggleApp.WebApi
             services.AddScoped<IToggleService, ToggleService>();
 
             services.AddMvc();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "ToggleApp Web Api", Version = "v1" });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -41,6 +47,15 @@ namespace ToggleApp.WebApi
                 app.UseBrowserLink();
                 app.UseDatabaseErrorPage();
             }
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ToggleApp Web Api");
+            });
 
             app.UseMvc();
         }
