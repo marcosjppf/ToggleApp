@@ -126,7 +126,7 @@ namespace ToggleApp.WebApi.Controllers
         /// </remarks>
         /// <param name="applicationId">Application/Service Id</param>
         /// <param name="version">Toggle version</param>
-        /// <param name="item"></param>
+        /// <param name="toggleViewModel">Toggle model</param>
         /// <returns>Success Message</returns>
         /// <response code="201">Created Message</response>
         /// <response code="400">Bad Request</response>      
@@ -173,17 +173,17 @@ namespace ToggleApp.WebApi.Controllers
         ///
         /// </remarks>
         /// <param name="id">Toggle Id</param>
-        /// <param name="item"></param>
+        /// <param name="toggleViewModel">Toggle model</param>
         /// <returns>Success Message</returns>
         /// <response code="200">Success</response>
         /// <response code="400">Bad Request</response>      
         /// <response code="404">Not Found the Toggle</response>
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody]ToggleViewModel model)
+        public async Task<IActionResult> Put(int id, [FromBody]ToggleViewModel toggleViewModel)
         {
             try
             {
-                if (id <= 0 || model == null)
+                if (id <= 0 || toggleViewModel == null)
                     return BadRequest();
 
                 var toggle = await _toggleServices.GetToggleByIdAsync(id);
@@ -191,8 +191,8 @@ namespace ToggleApp.WebApi.Controllers
                 if (toggle == null)
                     return NotFound($"Toggle Id {id} does not exists.");
 
-                toggle.Enable = model.Value;
-                toggle.Name = model.Name;
+                toggle.Enable = toggleViewModel.Value;
+                toggle.Name = toggleViewModel.Name;
 
                 var toggleUpdated = await _toggleServices.UpdateToggleAsync(toggle);
 
@@ -214,7 +214,6 @@ namespace ToggleApp.WebApi.Controllers
         ///
         /// </remarks>
         /// <param name="id">Toggle Id</param>
-        /// <param name="item"></param>
         /// <returns>Success Message</returns>
         /// <response code="200">Success</response>
         /// <response code="400">Bad Request</response>      
